@@ -7,13 +7,13 @@ public class Declaration {
     private final int year;
     private int taxToPay;
 
-    public Declaration(String number, int year) {
-        this.id = number;
+    public Declaration(String id, int year) {
+        this.id = id;
         this.year = year;
     }
 
-    public Declaration(String number, int year, int tax) {
-        this.id = number;
+    public Declaration(String id, int year, int tax) {
+        this.id = id;
         this.year = year;
         this.taxToPay = tax;
     }
