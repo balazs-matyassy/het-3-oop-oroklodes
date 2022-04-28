@@ -2,6 +2,7 @@ package hu.progmatic.lesson_20220428_04_employees.app;
 
 import hu.progmatic.lesson_20220428_04_employees.Employee;
 import hu.progmatic.lesson_20220428_04_employees.Report;
+import hu.progmatic.lesson_20220428_04_employees.ReportMenSalarySum;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,7 +14,7 @@ public class Main {
         };
 
         Report[] reports = {
-
+                new ReportMenSalarySum()
         };
 
         for (Report report : reports) {
