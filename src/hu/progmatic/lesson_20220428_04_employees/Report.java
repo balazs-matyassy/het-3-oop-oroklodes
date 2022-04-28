@@ -15,6 +15,10 @@ public class Report {
         }
     }
 
+    public String getName() {
+        return null;
+    }
+
     public final int getCount() {
         return count;
     }
@@ -26,6 +30,7 @@ public class Report {
     @Override
     public final String toString() {
         return "Report{" +
+                "name=" + getName() +
                 "count=" + count +
                 ", total=" + total +
                 '}';
