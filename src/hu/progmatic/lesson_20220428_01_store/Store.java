@@ -11,7 +11,7 @@ public class Store {
         Inventory box = null;
 
         for (Inventory inventory : inventories) {
-            if (inventory.equals(newInventory)) {
+            if (newInventory.equals(inventory)) {
                 box = inventory;
                 break;
             }
@@ -23,6 +23,7 @@ public class Store {
             for (int i = 0; i < inventories.length; i++) {
                 if (inventories[i] == null) {
                     inventories[i] = new Inventory(newInventory.getProduct(), newInventory.getQuantity());
+                    break;
                 }
             }
         } else {
