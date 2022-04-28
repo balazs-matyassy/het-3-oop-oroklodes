@@ -22,6 +22,8 @@ public class Main {
         }
 
         // 2. verzió: legrosszabb esetben 2 összehasonlítás kell
+        // ha páros és páratlan évekre szétválogatjuk a bevallásokat,
+        // akkor csak a bevallások felét kell megvizsgálni
         Declaration[] declarations_0 = {
                 declarations[0],
                 declarations[2]
