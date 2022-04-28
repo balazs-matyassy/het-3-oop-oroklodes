@@ -10,6 +10,26 @@ public class Main {
                 new Declaration("ÁFA", 2020, 500000)
         };
 
+        // hány darab új bevallást adtunk be korrekciók nélkül?
+        // egy bevallás akkor korrekció, ha létezik vele azonos korábbi bevallás
+        int counter = 0;
 
+        for (int i = 0; i < declarations.length; i++) {
+            boolean correction = false;
+
+            for (int j = 0; j < i; j++) {
+                // Van-e korábbi azonos adónemre és évre vonatkozó bevallás?
+                if (declarations[j].equals(declarations[i])) {
+                    correction = true;
+                    break;
+                }
+            }
+
+            if (!correction) {
+                counter++;
+            }
+        }
+
+        System.out.println("Új bevallások száma: " + counter);
     }
 }
