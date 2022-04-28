@@ -53,6 +53,13 @@ public class Declaration {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, year);
+        // Mit kell teljesítenie egy hashCode-nak?
+        // Ha kettő hashCode NEM egyenlő, akkor o1.equals(o2)-nek false értéket KELL adnia
+        // Ha kettő hashCode egyenlő, akkor o1.equals(o2)-nek tetszőleges (true vagy false) értéke lehet
+        // Kérdés: return 0; érvényes hashCode-ot ad-e? -> matematikai értelemben érvényes, de értelmetlen
+
+        // Pl. bevallás éve páros szám-e?
+        // -> érvényes
+        return year % 2;
     }
 }
