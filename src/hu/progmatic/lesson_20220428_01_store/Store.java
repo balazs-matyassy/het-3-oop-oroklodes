@@ -7,11 +7,33 @@ public class Store {
         this.inventories = new Inventory[inventorySize];
     }
 
-    public void addInventory(Inventory inventory) {
+    public void addInventory(Inventory newInventory) {
+        Inventory box = null;
 
+        for (Inventory inventory : inventories) {
+            if (inventory.equals(newInventory)) {
+                box = inventory;
+                break;
+            }
+        }
+
+        // ha még nincs ilyen doboz a raktárban,
+        // akkor megkeressük az első üres helyet a raktárban és létrehozunk egy új dobozt
+        if (box == null) {
+            for (int i = 0; i < inventories.length; i++) {
+                if (inventories[i] == null) {
+                    inventories[i] = new Inventory(newInventory.getProduct(), newInventory.getQuantity());
+                }
+            }
+        } else {
+            // ha már van ilyen doboz, akkor hozzáadjuk az új mennyiséget
+            box.setQuantity(box.getQuantity() + newInventory.getQuantity());
+        }
     }
 
     public void printInventories() {
-
+        for (Inventory inventory : inventories) {
+            System.out.println(inventory);
+        }
     }
 }
